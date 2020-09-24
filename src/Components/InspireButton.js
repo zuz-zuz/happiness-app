@@ -18,15 +18,8 @@ const style = {height: '0',
 const InspireButton = () => {
   return (
     <Grid  item xs={12} style={{maxWidth: '35%', margin: 'auto' }}>
-      <Link to="/inspiration" 
-        style={{textDecoration: 'none'}}
-        > 
-        <Button 
-          fullWidth
-          variant='outlined' 
-          disableElevation 
-          style={style}
-          >
+      <Link to="/inspiration" style={{textDecoration: 'none'}} > 
+        <Button fullWidth variant='outlined' disableElevation style={style}>
           Get inspired
         </Button>
       </Link>

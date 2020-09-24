@@ -14,16 +14,12 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: '2px solid darkgrey',
     borderTop: '2px solid darkgrey',
     marginTop: '20px'
-
   },
+
   toolbarTitle: {
     flex: 1,
     textDecoration: 'none',
     color: 'black'
-  },
-  toolbarSecondary: {
-    justifyContent: 'space-between',
-    overflowX: 'auto',
   },
 }));
 
@@ -37,38 +33,20 @@ const Header = () => {
           <Link to='/about'>
             <Button size="small" >WHAT IS THIS ALL ABOUT?</Button>
           </Link>
-          <Link to='/home' 
-            className={classes.toolbarTitle}
-            variant="h5"
-            align="center"
-            noWrap
-          >
-            <Typography component="h2">
+          <Link to='/' className={classes.toolbarTitle} align="center" >
+            <Typography component="h2" variant="h5" noWrap>
               A PORTION OF HAPPINESS
             </Typography>
           </Link>
           <ButtonBase>
             <Button size="small" endIcon={<InstagramIcon />} >
-            <a href="https://www.instagram.com/zuzi_berlin/" 
-              style={{ color: 'black', textDecoration: 'none' }}
-            >
-                FOLLOW
+            <a href="https://www.instagram.com/zuzi_berlin/" style={{ color: 'black', textDecoration: 'none' }} >
+              FOLLOW
             </a>
             </Button>
           </ButtonBase>
        </Toolbar>
       </Grid>
-       {/* <Grid item xs={12}>
-      //   <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
-      //     <div>Today</div>
-      //     <div>Today</div>
-      //     <div>Today</div>
-      //     <div>Today</div>
-      //     <div>Today</div>
-      //     <div>Today</div>
-      //   </Toolbar>
-      // </Grid> */}
-
       <Grid item xs={12}>
         <img alt='Logo' src={BeKind} style={{width: '100%'}} />
       </Grid>
