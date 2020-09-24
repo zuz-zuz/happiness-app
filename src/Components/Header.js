@@ -6,7 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import BeKind from '../Photos/BeKind2.jpg';
 import Grid from '@material-ui/core/Grid';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import IconButton from '@material-ui/core/IconButton';
+import ButtonBase from '@material-ui/core/ButtonBase';
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -17,14 +18,12 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbarTitle: {
     flex: 1,
+    textDecoration: 'none',
+    color: 'black'
   },
   toolbarSecondary: {
     justifyContent: 'space-between',
     overflowX: 'auto',
-  },
-  toolbarLink: {
-    padding: theme.spacing(1),
-    flexShrink: 0,
   },
 }));
 
@@ -35,23 +34,28 @@ const Header = () => {
     <>
       <Grid item xs={12}>
         <Toolbar className={classes.toolbar}>
-          <Button size="small" >WHAT IS THIS ALL ABOUT?</Button>
-          <Typography
-            component="h2"
+          <Link to='/about'>
+            <Button size="small" >WHAT IS THIS ALL ABOUT?</Button>
+          </Link>
+          <Link to='/home' 
+            className={classes.toolbarTitle}
             variant="h5"
-            color="inherit"
             align="center"
             noWrap
-            className={classes.toolbarTitle}
+          >
+            <Typography component="h2">
+              A PORTION OF HAPPINESS
+            </Typography>
+          </Link>
+          <ButtonBase>
+            <Button size="small" endIcon={<InstagramIcon />} >
+            <a href="https://www.instagram.com/zuzi_berlin/" 
+              style={{ color: 'black', textDecoration: 'none' }}
             >
-            A PORTION OF HAPPINESS
-          </Typography>
-          <Button size="small" endIcon={<InstagramIcon />}>
-            FOLLOW
-          </Button>
-          {/* <IconButton aria-label="delete">
-            <InstagramIcon />
-          </IconButton> */}
+                FOLLOW
+            </a>
+            </Button>
+          </ButtonBase>
        </Toolbar>
       </Grid>
        {/* <Grid item xs={12}>
@@ -64,6 +68,7 @@ const Header = () => {
       //     <div>Today</div>
       //   </Toolbar>
       // </Grid> */}
+
       <Grid item xs={12}>
         <img alt='Logo' src={BeKind} style={{width: '100%'}} />
       </Grid>
