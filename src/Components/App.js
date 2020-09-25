@@ -10,7 +10,7 @@ const App = () => {
   return (
     <Router>
       <Grid container style={{maxWidth: '90vw', margin: 'auto'}}>
-        <Grid container item >
+        <Grid item >
           <Header />
         </Grid>
         <Switch>
